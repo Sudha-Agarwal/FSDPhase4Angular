@@ -1,0 +1,19 @@
+
+<div class="container">
+<table class="table table-striped table-bordered">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>View</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let mobile of mobiles">
+            <td>{{mobile.sku}}</td>
+            <td>{{mobile.name}}</td>
+            <td>{{mobile.price}}</td>
+            <td><a routerLink="../mobile-details/{{mobile.sku}}">View</a></td>
+        </tr></tbody>
+</table>
+</div>

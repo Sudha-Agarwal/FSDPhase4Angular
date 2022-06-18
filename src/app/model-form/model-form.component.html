@@ -1,0 +1,83 @@
+<div class="container">
+
+    <form novalidate [formGroup]="myform" (ngSubmit)="onSubmit(myform.value)">
+        <fieldset formGroupName="name">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName">
+
+            <label> Last Name</label>
+            <input type="text" formControlName="lastName">
+
+        </fieldset>
+
+
+        <label>Email</label>
+        <input type="email" formControlName="email">
+
+        <div *ngIf="email.errors && (email.dirty || email.touched)">
+            <p *ngIf="myform.controls['email'].errors?.required">Email is required</p>
+            <p *ngIf="myform.controls['email'].errors?.pattern">Email must contain atleast one @</p>
+            <p *ngIf="myform.controls['email'].errors?.emailDomain">Email must be on gmail.com</p>
+        </div>
+
+
+        <label>Password</label>
+        <input type="password" formControlName="password">
+        <div *ngIf="password.errors && (password.dirty || password.touched)">
+            <p *ngIf="myform.controls['password'].errors?.required">Password is required</p>
+            <p *ngIf="myform.controls['password'].errors?.minlength">password must be 6 chars long</p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
+
+
+<!--<form (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for=""></label>
+        <input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">
+            </label><input type="text" formControlName="" class="form-control">
+    </div>
+
+    <fieldset>
+        <legend>
+            
+        </legend>
+    </fieldset>
+    <button class="btn btn-primary" type="submit"></button>
+
+</form> -->

@@ -1,0 +1,24 @@
+<div class="container">
+    <form #loginForm = "ngForm" (ngSubmit) ="onSubmit()">
+        <label>Email</label>
+        <input type="text" name="name" required [(ngModel)]="course.name"
+        #name = "ngModel">
+
+        <div *ngIf="loginForm.submitted && name.invalid">
+            <p *ngIf = "loginForm.controls['name'].errors.required">name is required</p>
+        </div>
+        <input type="text" name="author" [(ngModel)] = "course.author" 
+        #author = "ngModel" required >
+
+        <div *ngIf="loginForm.submitted && author.invalid">
+            <p *ngIf = "loginForm.controls['author'].errors.required">Author is required</p>
+           
+        </div>
+
+        <button class="btn btn-primary" type ="submit" [disabled] = "!loginForm.form.valid">Submit</button>
+
+    </form>
+
+
+
+</div>
