@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Mobiles } from '../../mobiles';
+
+
 
 @Component({
   selector: 'app-mobile-list',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobileListComponent implements OnInit {
 
-  public mobiles = [
+  selectedMobile:Mobiles = new Mobiles();
+
+  mobiles: Mobiles[] =[  
     {
       sku:"1",
       name:"Samsung",
@@ -33,11 +38,26 @@ export class MobileListComponent implements OnInit {
       name:"Xiaomi",
       price: 25000
     }
-  ]
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+ /* displayCounter(counter){
+    alert(counter);
+  }*/
+
+  showDetails(mobile){
+    this.selectedMobile = Object.assign({}, mobile);
+  }
+
+  updated(mobile:Mobiles){
+
+    var mob = this.mobiles.find(element => element.sku == mobile.sku)
+    Object.assign(mob, mobile);
+    alert("Mobile data updated");
+
   }
 
 }

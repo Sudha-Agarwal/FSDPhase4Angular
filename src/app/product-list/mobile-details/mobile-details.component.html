@@ -1,5 +1,15 @@
-<p>mobile-details works!</p>
+<!--<p>mobile-details works!</p>
 
 <p>Mobile Id: {{sku}}</p>
 
 <button class="btn btn-primary" (click) = "goBack()">Go Back</button>
+
+<button class = "btn btn-primary" (click) = "valueChanged()">Click to send to Parent</button> -->
+
+
+
+<p> Mobile SKU    :    {{mobiles.sku}}</p>
+<p> Name    :    <input [(ngModel)] = "mobiles.name"></p>
+<p> Mobile SKU    :   <input [(ngModel)] = "mobiles.price"></p>
+
+<button class="btn btn-primary" (click) ="update()">Update Value</button>

@@ -15,7 +15,8 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { IncompleteGuard } from './incomplete.guard';
 
-const routes: Routes = [ 
+
+const routes: Routes = [  
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:"home", component: HomeComponent},
     {path:"products", component: ProductListComponent,

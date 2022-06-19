@@ -6,6 +6,8 @@
         <th>Name</th>
         <th>Price</th>
         <th>View</th>
+        <th>Action</th>
+        
     </thead>
 
     <tbody>
@@ -14,6 +16,12 @@
             <td>{{mobile.name}}</td>
             <td>{{mobile.price}}</td>
             <td><a routerLink="../mobile-details/{{mobile.sku}}">View</a></td>
+            <td><button (click) = "showDetails(mobile)">Edit</button></td>
         </tr></tbody>
 </table>
+
+
+<!--<app-mobile-details (Valuechange) = "displayCounter($event)"></app-mobile-details>-->
+
+<app-mobile-details [mobiles] = "selectedMobile" (mobileChange) = "updated($event)"></app-mobile-details>
 </div>

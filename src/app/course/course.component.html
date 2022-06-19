@@ -5,14 +5,15 @@
         <th>Id</th>
         <th>Name</th>
         <th>Author</th>
-        <th>View</th>
+        <th>View</th>       
             </tr>
         </thead>
+
 
         <tbody>
             <tr *ngFor = "let course of courses">
                 <td>{{course.id}}</td>
-                <td>{{course.name}}</td>
+                <td>{{course.name | uppercase}}</td>
                 <td>{{course.author}}</td>
                 <td><a routerLink = "../course-detail/{{course.id}}">Details</a></td>
             

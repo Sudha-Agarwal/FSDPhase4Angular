@@ -8,6 +8,7 @@ import { DataServiceService } from '../data-service.service';
 })
 export class CourseComponent implements OnInit {
 courses:any;
+searchText;
   constructor(private ds:DataServiceService) { 
 
   }

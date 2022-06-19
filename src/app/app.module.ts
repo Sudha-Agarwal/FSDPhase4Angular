@@ -22,6 +22,7 @@ import { AppHighlightDirective } from './app-highlight.directive';
 import { AuthenticationGuard } from './authentication.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { AuthenticationGuard } from './authentication.guard';
     CourseDetailComponent,
     AddCourseComponent,
     AppHighlightDirective
+    
   ],
   imports: [
     BrowserModule,

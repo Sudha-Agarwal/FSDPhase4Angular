@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 sendToChild:string = "Message from parent";
+
+displayCounter(count) {
+  alert(count);
+}
   constructor() { }
 
   ngOnInit(): void {
