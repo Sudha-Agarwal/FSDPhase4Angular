@@ -20,6 +20,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AppHighlightDirective } from './app-highlight.directive';
 import { AuthenticationGuard } from './authentication.guard';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -38,8 +39,8 @@ import { AuthenticationGuard } from './authentication.guard';
     CourseComponent,
     CourseDetailComponent,
     AddCourseComponent,
-    AppHighlightDirective
-    
+    AppHighlightDirective,
+    FilterPipe    
   ],
   imports: [
     BrowserModule,

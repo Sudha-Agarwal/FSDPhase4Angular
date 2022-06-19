@@ -14,6 +14,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { IncompleteGuard } from './incomplete.guard';
+//import { AdminModule } from './admin/admin.module';
 
 
 const routes: Routes = [  
@@ -34,6 +35,7 @@ const routes: Routes = [
 canDeactivate:[IncompleteGuard]},
   {path:'course-detail/:id', component:CourseDetailComponent},
   {path:'add-course', component:AddCourseComponent},
+  {path:'admin', loadChildren: () => import("./admin/admin.module").then(module => module.AdminModule)}
   
   
   {path: "**", component:HomeComponent}
